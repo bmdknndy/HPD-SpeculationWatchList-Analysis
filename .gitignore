@@ -2,8 +2,6 @@
 .Rhistory
 .RData
 .Rproj.user
-*.html
-*.pdf
 *_cache/
 *_files/
 
@@ -15,3 +13,5 @@ exports/models/*.rds
 exports/*.csv
 data/raw/
 data/processed/legacy-robustnesschecks/
+/.quarto/
+**/*.quarto_ipynb

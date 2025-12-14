@@ -4,7 +4,21 @@
     "href": "index.html",
     "title": "NYC Speculation Watchlist Analysis",
     "section": "",
-    "text": "This project examines how speculative purchases of rent-regulated housing in New York City affect tenant outcomes and building conditions\nRead the analysis"
+    "text": "This project examines how speculative purchases of rent-regulated housing in New York City affect tenant outcomes and building conditions\nRead my policy brief: Policy Brief"
+  },
+  {
+    "objectID": "analysis/brief.html#model-summary-tables",
+    "href": "analysis/brief.html#model-summary-tables",
+    "title": "Re-Measuring Speculation, Evictions, and Building Conditions in NYC’s Rent-Regulated Housing",
+    "section": "Model Summary Tables",
+    "text": "Model Summary Tables\nThese tables report interaction-weighted average treatment effects on the treated (ATTs) following Sun & Abraham (2020), with standard errors clustered at the building (BBL) level. Each event study model is run with the independent variable as an indicator of possible speculation with a quarterly capitalization rate threshold of 50th percentile, 25th percentile, and 10th percentile.\n\nEvictions\n\nOfficial SWL (Borough-Level) Methodology\n\nThe coefficients on the interaction-weighted average treatment effect on the treated (IWATT) for all models are significant and model fit is similar across models. However, in Model 1 and Model 2, the effect is strong and positive, indicating a relatively greater level of evictions in buildings with suspected speculative sales, while in Model 3 the coefficient flipsnegative. Though the change in the sign in the coefficient may be due to the relatively smallerproportion of treated units in the third model, these results at present must be interpreted as presenting an ambiguous relationship between real estate speculation as identified by relativecapitalization rate at the borough level and the number of evictions in periods following a potentially speculative purchase.\n\n\nNTA-Level Methodology\n\nWhen repeating the above analysis at the NTA level, all coefficients are positive and model fit is similarly strong across models. These results suggest a strong relationship between a relatively low capitalization rate at time of purchase when measured at the neighborhood level and an annual increase in the number of evictions at the purchased property in years following the sale, with a 25% cutoff in capitalization rates producing the most sensitive response.\n\n\n\nHPD Violations\n\nOfficial SWL (Borough-Level) Methodology\n\nThere appears to be no significant relationship between the number of HPD violations and a building’s status according to these three watchlist specifications when the official SWL (borough-level) speculative sale indicator criteria is applied.\n\n\nNTA-Level Methodology\n\nAlternatively setting the threshold at the NTA’s quarterly bottom 25th percentile of capitalization rates leads to a stronger level of statistical significance and improves model fit overall. Applying a capitalization rate based speculation indicator at the NTA level appears overall more sensitive regardless of the cutoff rate selected."
+  },
+  {
+    "objectID": "analysis/brief.html#event-study-plots",
+    "href": "analysis/brief.html#event-study-plots",
+    "title": "Re-Measuring Speculation, Evictions, and Building Conditions in NYC’s Rent-Regulated Housing",
+    "section": "Event-study Plots",
+    "text": "Event-study Plots\nGiven the results of the models, in the full event study plots below I directly compare the official SWL methodology with the most sensitive method according to the results: NTA-based with a cap rate threshold of 25%.\n\nEvictions\n\n\n\n\n\n\n\n\n\n###HPD Violations\n\n\n\n\n\n\n\n\n\nSpeculative acquisitions of rent-regulated buildings appear to be followed by sustained increases in eviction activity and increases in HPD violations. These effects are stronger when speculation is identified using a neighborhood-relative (NTA bottom-quartile) capitalization rate threshold, suggesting that this more local benchmarks is more sensitive to speculative behavior than the official borough-level Speculation Watchlist."
   },
   {
     "objectID": "analysis/swl_analysis.html",

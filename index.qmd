@@ -6,4 +6,4 @@ editor: visual
 
 This project examines how speculative purchases of rent-regulated housing in New York City affect tenant outcomes and building conditions
 
- [**Read the analysis**](analysis/swl_analysis.html)
+**Read my policy brief:** [Policy Brief](docs/brief.html) 
