@@ -18,7 +18,7 @@
     "href": "analysis/brief.html#event-study-plots",
     "title": "Re-Measuring Speculation, Evictions, and Building Conditions in NYC’s Rent-Regulated Housing",
     "section": "Event-study Plots",
-    "text": "Event-study Plots\nGiven the results of the models, in the full event study plots below I directly compare the official SWL methodology with the most sensitive method according to the results: NTA-based with a cap rate threshold of 25%.\n\nEvictions\n\n\n\n\n\n\n\n\n\n###HPD Violations\n\n\n\n\n\n\n\n\n\nSpeculative acquisitions of rent-regulated buildings appear to be followed by sustained increases in eviction activity and increases in HPD violations. These effects are stronger when speculation is identified using a neighborhood-relative (NTA bottom-quartile) capitalization rate threshold, suggesting that this more local benchmarks is more sensitive to speculative behavior than the official borough-level Speculation Watchlist."
+    "text": "Event-study Plots\nGiven the results of the models, in the full event study plots below I directly compare the official SWL methodology with the most sensitive method according to the results: NTA-based with a cap rate threshold of 25%.\n\nEvictions\n\n\n\n\n\n\n\n\n\n\n\nHPD Violations\n\n\n\n\n\n\n\n\n\nSpeculative acquisitions of rent-regulated buildings appear to be followed by sustained increases in eviction activity and increases in HPD violations. These effects are stronger when speculation is identified using a neighborhood-relative (NTA bottom-quartile) capitalization rate threshold, suggesting that this more local benchmarks is more sensitive to speculative behavior than the official borough-level Speculation Watchlist."
   },
   {
     "objectID": "analysis/swl_analysis.html",

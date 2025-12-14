@@ -12,7 +12,6 @@ library(dplyr)
 library(readr)
 ```
 
-# 
 
 ![](images/site/HPDSWLHeader.png)
 
@@ -101,7 +100,7 @@ ggiplot(
   labs(x = "Years relative to sale", y = "Estimate (95% CI)")
 ```
 
-###HPD Violations
+### HPD Violations
 
 ```{r hpdv_plot, echo=FALSE}
 ggiplot(

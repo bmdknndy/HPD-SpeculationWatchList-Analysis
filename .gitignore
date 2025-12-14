@@ -2,16 +2,14 @@
 .Rhistory
 .RData
 .Rproj.user
-*_cache/
-*_files/
+
 
 # macOS
 .DS_Store
 
-# Large files (optional)
-exports/models/*.rds
-exports/*.csv
 data/raw/
 data/processed/legacy-robustnesschecks/
+
+
 /.quarto/
 **/*.quarto_ipynb
