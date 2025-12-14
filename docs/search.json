@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NYC Speculation Watchlist Analysis",
+    "section": "",
+    "text": "This project examines how speculative purchases of rent-regulated housing in New York City affect tenant outcomes and building conditions\nRead the analysis"
+  },
+  {
     "objectID": "analysis/swl_analysis.html",
     "href": "analysis/swl_analysis.html",
     "title": "Official SWL Vs. Alternative Methodology DiD Analysis",
