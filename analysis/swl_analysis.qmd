@@ -1,0 +1,110 @@
+---
+title: "Official SWL Vs. Alternative Methodology DiD Analysis"
+author: "Brady Kennedy"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+execute:
+  echo: true
+  warning: true
+  message: false
+---
+
+```{r setup}
+library(fixest)
+library(ggplot2)
+library(ggfixest)
+library(dplyr)
+library(readr)
+```
+
+This analysis compares two ways of identifying speculative purchases of rent-regulated buildings:
+
+-   The official HPD Speculation Watchlist (SWL), which uses borough-level capitalization rate thresholds at the time of sale.
+
+-   An alternative NTA-based threshold, which flags buildings with relatively low capitalizations rates given the respective neighborhood (NTA) and quarter, a more local measure of unusually low returns on building purchases.
+
+For each definition, I estimate how a suspected speculative purchase affects:
+
+-   The number of executed evictions in the building.
+
+-   The number of HPD housing maintenance code violations (all classes).
+
+All models are estimated using Sun & Abraham’s (2020) heterogeneous treatment event-study DiD framework with building-level and year-level fixed effects (see the methodological appendix for additional notes).
+
+# Analysis
+
+```{r load_evicts}
+evict_swl <- readRDS("../exports/models/evict_swl.rds") 
+evict_nta25 <- readRDS("../exports/models/evict_nta25.rds")
+```
+
+```{r load_hpd}
+hpd_swl <- readRDS("../exports/models/hpd_swl.rds") 
+hpd_nta25 <- readRDS("../exports/models/hpd_nta25.rds")
+```
+
+## Model Summary Tables
+
+### Evictions
+
+#### Official SWL (Borough-Level) Methodology
+
+![](images/SWLbEvicts.png)
+
+The coefficients on the interaction-weighted average treatment effect on the treated (IWATT) for all models are significant and model fit is similar across models. However, in Model 1 and Model 2, the effect is strong and positive, indicating a relatively greater level of evictions in buildings with suspected speculative sales, while in Model 3 the coefficient flipsnegative. Though the change in the sign in the coefficient may be due to the relatively smallerproportion of treated units in the third model, these results at present must be interpreted as presenting an ambiguous relationship between real estate speculation as identified by relativecapitalization rate at the borough level and the number of evictions in periods following a potentially speculative purchase.
+
+#### NTA-Level Methodology
+
+![](images/SWLnEvicts.png)
+
+When repeating the above analysis at the NTA level, all coefficients are positive and model fit is similarly strong across models. These results suggest a strong relationship between a relatively low capitalization rate at time of purchase when measured at the neighborhood level and an annual increase in the number of evictions at the purchased property in years following the sale, with a 25% cutoff in capitalization rates producing the most sensitive response.
+
+### HPD Violations
+
+#### Official SWL (Borough-Level) Methodology
+
+![](images/SWLbHPDall.png)
+
+There appears to be no significant relationship between the number of HPD violations and a building’s status according to these three watchlist specifications when the official SWL (borough-level) speculative sale indicator criteria is applied.
+
+#### NTA-Level Methodology
+
+![](images/SWLnHPDall.png)
+
+Alternatively setting the threshold at the NTA’s quarterly bottom 25th percentile of capitalization rates leads to a stronger level of statistical significance and improves model fit overall. Applying a capitalization rate based speculation indicator at the NTA level appears overall more sensitive regardless of the cutoff rate selected.
+
+## Event-study Plots
+
+### Evictions
+
+```{r evictions_plot}
+ggiplot(
+  list("Official SWL" = evict_swl, "NTA Bottom 25%" = evict_nta25),
+  ref.line = -1,
+  ci_level = 0.95,
+  drop = "!^(-2|0|1|2|3|4|5)$"
+) +
+  theme_minimal() +
+  labs(x = "Years relative to sale", y = "Estimate (95% CI)") + labs(color = "Speculation definition", shape = "Speculation definition") + guides(shape = "none") + guides(fill = "none")
+```
+
+###HPD Violations
+
+```{r hpdv_plot}
+ggiplot(
+  list("Official SWL" = hpd_swl, "NTA Bottom 25%" = hpd_nta25),
+  ref.line = -1,
+  ci_level = 0.95,
+  drop = "!^(-2|0|1|2|3|4|5)$"
+) +
+  theme_minimal() +
+  labs(x = "Years Relative To Sale", y = "Estimate (95% CI)") + labs(color = "Speculation definition", shape = "Speculation definition") + guides(shape = "none") + guides(fill = "none")
+
+```
+
+Speculative acquisitions of rent-regulated buildings appear to be followed by sustained increases in eviction activity and increases in HPD violations. These effects are stronger when speculation is identified using a neighborhood-relative (NTA bottom-quartile) capitalization rate threshold, suggesting that this more local benchmarks is more sensitive to speculative behavior than the official borough-level Speculation Watchlist.
+
+
