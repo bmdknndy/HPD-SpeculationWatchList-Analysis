@@ -12,16 +12,11 @@ library(dplyr)
 library(readr)
 ```
 
-
 ![](images/site/HPDSWLHeader.png)
 
 # Introduction
 
 This analysis evaluates whether New York City’s Speculation Watchlist (SWL) successfully identifies purchases of rent-regulated buildings that are followed by worse outcomes for tenants and whether the methodology can be improved using data the city already collects.
-
--   The official HPD Speculation Watchlist (SWL), which uses borough-level capitalization rate thresholds at the time of sale.
-
--   An alternative NTA-based threshold, which flags buildings with relatively low capitalizations rates given the respective neighborhood (NTA) and quarter, a more local measure of unusually low returns on building purchases.
 
 Descriptive analysis reveals that capitalization rates across NYC show substantial within-borough variation, with distributions often clustering near the lower quartile and varying sharply across neighborhoods. This suggests that a borough-level threshold may be too blunt to capture genuinely speculative behavior.
 
@@ -30,6 +25,12 @@ Descriptive analysis reveals that capitalization rates across NYC show substanti
 ![](images/figures/CapRateByNTA.png)
 
 I therefore deploy a causal inference (DiD) approach to compare the official SWL definition to an alternative, neighborhood-relative (NTA-level) approach. The intuition is simple: unusually low cap rates are more meaningful when evaluated against local market conditions rather than citywide or borough wide averages.
+
+In what follows I compare two methods for identifying potential speculative behavior in the rent-regulated market:
+
+-   The official HPD Speculation Watchlist (SWL), which uses borough-level capitalization rate thresholds at the time of sale.
+
+-   An alternative NTA-based threshold, which flags buildings with relatively low capitalizations rates given the respective neighborhood (NTA) and quarter, a more local measure of unusually low returns on building purchases.
 
 For each definition, I estimate how a suspected speculative purchase affects:
 
