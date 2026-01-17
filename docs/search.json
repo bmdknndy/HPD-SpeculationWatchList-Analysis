@@ -25,7 +25,7 @@
     "href": "analysis/swl_analysis.html",
     "title": "Official SWL Vs. Alternative Methodology DiD Analysis",
     "section": "",
-    "text": "library(fixest)\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.4.3\n\nlibrary(ggfixest)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(readr)\nThis analysis compares two ways of identifying speculative purchases of rent-regulated buildings:\nFor each definition, I estimate how a suspected speculative purchase affects:\nAll models are estimated using Sun & Abraham’s (2020) heterogeneous treatment event-study DiD framework with building-level and year-level fixed effects (see the methodological appendix for additional notes)."
+    "text": "library(fixest)\nlibrary(ggplot2)\nlibrary(ggfixest)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(readr)\nThis analysis compares two ways of identifying speculative purchases of rent-regulated buildings:\nFor each definition, I estimate how a suspected speculative purchase affects:\nAll models are estimated using Sun & Abraham’s (2020) heterogeneous treatment event-study DiD framework with building-level and year-level fixed effects (see the methodological appendix for additional notes)."
   },
   {
     "objectID": "analysis/swl_analysis.html#model-summary-tables",
